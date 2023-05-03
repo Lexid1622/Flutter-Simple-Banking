@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "216705380150",
+    "project_id": "davisflutterbanking",
+    "storage_bucket": "davisflutterbanking.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:216705380150:android:b4406cbc58f0e6df510d97",
+        "android_client_info": {
+          "package_name": "com.example.test5"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "216705380150-3t36kg59pa5u3q4mven64ekf72i6oei9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOkdBUaR3ObVOPQ47fYwcqfQtKjR_qwpw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "216705380150-3t36kg59pa5u3q4mven64ekf72i6oei9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "216705380150-qjj4vllh4333eg1ldik8bvg8l1u57mm9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.test5"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
