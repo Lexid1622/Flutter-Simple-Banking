@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -11,7 +12,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        appBar: AppBar(
+          leading: const Icon(Icons.monetization_on),
+            backgroundColor: CupertinoColors.darkBackgroundGray,
+            title:const Text("Flutter Banking")
+        ),
+        backgroundColor: Colors.white70,
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
@@ -24,7 +30,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   },
                   style: ElevatedButton.styleFrom(
                     elevation: 12.0,
-                    textStyle: const TextStyle(color: Colors.green),
+                    backgroundColor: Colors.black12,
                   ), child: const Text('Login'),
                 ),
                 ElevatedButton(
@@ -32,11 +38,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     Navigator.pushNamed(context, 'registration_screen');
                   },
                   style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black12,
                     elevation: 12.0,
-                    textStyle: const TextStyle(color: Colors.blueAccent),
                   ), child: const Text('Register'),
                 ),
               ]),
-        ));
+        )
+    );
   }
 }

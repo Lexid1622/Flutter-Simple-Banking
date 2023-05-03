@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class Checking extends StatefulWidget {
+  const Checking({super.key});
 
   @override
-  _HomeScreen createState() => _HomeScreen();
+  _Checking createState() => _Checking();
 }
 
-class _HomeScreen extends State<HomeScreen> {
+class _Checking extends State<Checking> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +24,7 @@ class _HomeScreen extends State<HomeScreen> {
             height: 200,
             decoration: const BoxDecoration(
               gradient:
-                  LinearGradient(colors: [Colors.lightBlue, Colors.lightGreen]),
+              LinearGradient(colors: [Colors.lightBlue, Colors.lightGreen]),
               borderRadius: BorderRadius.all(Radius.circular(20)),
             ),
             child: Center(
@@ -45,6 +45,7 @@ class _HomeScreen extends State<HomeScreen> {
                         color: Colors.black,
                         fontSize: 50),
                   ),
+                  //ElevatedButton(onPressed: onPressed, child: child)
                 ],
               ),
             )),

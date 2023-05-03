@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 //import 'package:modal_progress_hud/modal_progress_hud.dart';
@@ -24,6 +25,8 @@ const kTextFieldDecoration = InputDecoration(
 );
 
 class RegistrationScreen extends StatefulWidget {
+  const RegistrationScreen({super.key});
+
   @override
   _RegistrationScreenState createState() => _RegistrationScreenState();
 }
@@ -35,8 +38,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   bool showSpinner = false;
   @override
   Widget build(BuildContext context) {
+    AppBar(
+        leading: const Icon(Icons.monetization_on),
+        backgroundColor: CupertinoColors.darkBackgroundGray,
+        title:const Text("Flutter Banking")
+    );
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.white70,
       body: ModalProgressHUD(
         inAsyncCall: showSpinner,
         child: Padding(
@@ -77,7 +85,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     final newUser = await _auth.createUserWithEmailAndPassword(
                         email: email, password: password);
                     if (newUser != null) {
-                      Navigator.pushNamed(context, 'home_screen');
+                      Navigator.pushNamed(context, 'login_screen');
                     }
                   } catch (e) {
                     ScaffoldMessenger.of(context).showSnackBar(

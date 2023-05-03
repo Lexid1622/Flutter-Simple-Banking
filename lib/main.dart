@@ -10,7 +10,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options:
   DefaultFirebaseOptions.currentPlatform,);
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       initialRoute: 'welcome_screen',
       routes: {
         'welcome_screen': (context) => const WelcomeScreen(),
-        'registration_screen': (context) => RegistrationScreen(),
+        'registration_screen': (context) => const RegistrationScreen(),
         'login_screen': (context) => const LoginScreen(),
         'home_screen': (context) => const HomeScreen()
       },
