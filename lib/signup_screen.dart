@@ -86,7 +86,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           content: Text('Try again'),
                         )
                     );
-                    // print(e);
                   }
                   setState(() {
                     showSpinner = false;
