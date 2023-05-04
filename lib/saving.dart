@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Checking extends StatefulWidget {
-  const Checking({super.key});
+class Saving extends StatefulWidget {
+  const Saving({super.key});
 
   @override
-  _Checking createState() => _Checking();
+  _Saving createState() => _Saving();
 }
 
-class _Checking extends State<Checking> {
+class _Saving extends State<Saving> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +24,7 @@ class _Checking extends State<Checking> {
             height: 200,
             decoration: const BoxDecoration(
               gradient:
-              LinearGradient(colors: [Colors.lightBlue, Colors.lightGreen]),
+              LinearGradient(colors: [Colors.red, Colors.lightGreen]),
               borderRadius: BorderRadius.all(Radius.circular(20)),
             ),
             child: Center(
@@ -32,7 +32,7 @@ class _Checking extends State<Checking> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
                   Text(
-                    'Total in Checking',
+                    'Total in Savings',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
@@ -56,9 +56,9 @@ class _Checking extends State<Checking> {
         child: Container(height: 50.0),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => setState(() {}),
+        onPressed: () => setState(() {Navigator.pushNamed(context, 'home_screen');}),
         tooltip: 'Increment Counter',
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.arrow_back),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
