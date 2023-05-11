@@ -1,3 +1,4 @@
-library my_prj.globals;
+library globals;
 
-num assets=500;
+//double assets=500.65;
+double valueDeposit=0.00;

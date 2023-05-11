@@ -1,20 +1,47 @@
+//import 'dart:js';
+
+//import 'dart:js';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:test5/checking.dart';
 import 'package:test5/saving_transaction.dart';
-import 'globals.dart';
+//import 'package:test5/checking.dart';
+//import 'package:test5/saving_transaction.dart';
+//import 'globals.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  //static late List<savings> savings;
+  double savings1;
+
+  HomeScreen({super.key, required this.savings1});
 
   @override
   _HomeScreen createState() => _HomeScreen();
+/*
+  const HomeScreen({
+    Key? key,
+    required this.savings,
+}):super(key: key);*/
+  
 }
 
 class _HomeScreen extends State<HomeScreen> {
+  
 
   @override
   Widget build(BuildContext context) {
+    /*void goToSavingTransaction(){
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (context){
+            return const SavingsTransaction();
+          }
+      )).then((valueFromTextField){
+        // use your valueFromTextField from the second page
+        num contextHolder=context as num;
+        assets= contextHolder+assets;
+      });
+    }*/
+    widget.savings1= 500.65;
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(Icons.monetization_on),
@@ -46,7 +73,7 @@ class _HomeScreen extends State<HomeScreen> {
                         fontSize: 30),
                   ),
                   Text(
-                    '\$ $assets',
+                    '\$ ${widget.savings1}',
                     style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
@@ -57,13 +84,22 @@ class _HomeScreen extends State<HomeScreen> {
             )
         ),
             ElevatedButton (
-              onPressed: () => setState(() {Navigator.pushNamed(context, 'checking_screen');}), child: Text('Checking Account'),
+              onPressed: () => setState(() {Navigator.pushNamed(context, 'checking_screen');}), child: const Text('Checking Account'),
             ),
             ElevatedButton (
-              onPressed: () => const Checking(), child: const Text("Savings Account"),
+              onPressed: () => setState(() {Navigator.pushNamed(context, 'saving_screen');}), child: const Text('Savings Account'),
             ),
             ElevatedButton (
-              onPressed: () => const SavingsTransaction(), child: const Text("Savings Deposit"),
+                onPressed: () =>
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                    builder: (context) => SavingsTransaction(savings2: widget.savings1),
+                    )
+                  ), child: const Text('saving deposit'),
+                //Navigator.pushNamed(context, 'saving_transaction_screen'),
+                //Navigator.push(context, savings as Route<Object?>),
+                //child: const Text('saving deposit'),,// );}), child: const Text('Saving Transaction'),
             ),
           ],
         )
@@ -85,3 +121,5 @@ class _HomeScreen extends State<HomeScreen> {
     );
   }
 }
+
+

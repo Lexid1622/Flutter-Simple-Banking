@@ -1,10 +1,16 @@
+//import 'dart:ffi';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'home_screen.dart';
+//import 'package:flutter/services.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'globals.dart';
+//import 'globals.dart';
 
 class SavingsTransaction extends StatefulWidget {
-  const SavingsTransaction({super.key});
+  late final double savings2;
+  SavingsTransaction({super.key, required this.savings2});
 
   @override
   _SavingsTransaction createState() => _SavingsTransaction();
@@ -12,15 +18,19 @@ class SavingsTransaction extends StatefulWidget {
 
 
 class _SavingsTransaction extends State<SavingsTransaction> {
-  late num valueInput;
+  double valueInput=0;
   bool showSpinner = false;
+
+  //add number controller
+  final TextEditingController _numEditingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
           leading: const Icon(Icons.monetization_on),
           backgroundColor: CupertinoColors.darkBackgroundGray,
-          title:const Text("Flutter Banking")
+          title: const Text("Flutter Banking")
       ),
       backgroundColor: Colors.white70,
       body: ModalProgressHUD(
@@ -32,13 +42,25 @@ class _SavingsTransaction extends State<SavingsTransaction> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               TextField(
-                  keyboardType: TextInputType.emailAddress,
-                  textAlign: TextAlign.center,
-                  onChanged: (value) {
-                    valueInput = value as num;
-                    //Do something with the user input.
-                  },
+                controller: _numEditingController,
+                keyboardType: TextInputType.number,
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.digitsOnly
+                ],
+                //controller: _numEditingController,
+                obscureText: false,
+                decoration: InputDecoration(
+                  border: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(12.0),
+                    ),
                   ),
+                  labelText: 'Deposit',
+                  labelStyle: TextStyle(
+                      color: Colors.black.withOpacity(0.8)
+                  ),
+                ),
+              ),
               const SizedBox(
                 height: 8.0,
               ),
@@ -47,24 +69,36 @@ class _SavingsTransaction extends State<SavingsTransaction> {
               ),
               ElevatedButton(
                 onPressed: () async {
-                  Navigator.pushNamed(context, 'home_screen');
-                  assets = assets+valueInput;
-                  setState(() {
-                    showSpinner = true;
-                  });
-                  setState(() {
-                    showSpinner = false;
-                  });
+                  submit();
                 },
                 style: ElevatedButton.styleFrom(
                   elevation: 12.0,
                   textStyle: const TextStyle(color: Colors.blueAccent),
-                ), child: const Text('Log In'),
+                ), child: const Text('Submit'),
               ),
             ],
           ),
         ),
       ),
+
     );
   }
+  void submit(){
+    widget.savings2+=int.parse(widget.savings2 as String);
+    Navigator.pushNamed(context, 'home_screen');
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => HomeScreen(savings1: widget.savings2),
+        )
+    );
+    setState(() {
+      showSpinner = true;
+    });
+    setState(() {
+      showSpinner = false;
+    });
+  }
+
 }
+
