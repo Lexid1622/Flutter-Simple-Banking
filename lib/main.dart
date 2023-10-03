@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:test5/checking.dart';
-import 'package:test5/saving.dart';
-import 'package:test5/saving_transaction.dart';
+import 'package:test5/contact.dart';
+import 'package:test5/saving1.dart';
+
 import 'firebase_options.dart';
 import 'welcome_screen.dart';
 import 'home_screen.dart';
@@ -29,10 +30,11 @@ class MyApp extends StatelessWidget {
         'welcome_screen': (context) => const WelcomeScreen(),
         'registration_screen': (context) => const RegistrationScreen(),
         'login_screen': (context) => const LoginScreen(),
-        'home_screen': (context) => HomeScreen(savings1: 500.65,),
+        'home_screen': (context) =>   HomeScreen(checkingNow: 375),
         'checking_screen': (context) => const Checking(),
         'saving_screen' : (context) => const Saving(),
-        'saving_transaction_screen' : (context) => SavingsTransaction(savings2: 0,),
+        'contact' : (context) => const Contact(),
+        //'saving_transaction_screen' : (context) => const SavingsTransaction(),
       },
     );
   }

@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "216705380150",
+    "firebase_url": "https://davisflutterbanking-default-rtdb.firebaseio.com",
     "project_id": "davisflutterbanking",
     "storage_bucket": "davisflutterbanking.appspot.com"
   },

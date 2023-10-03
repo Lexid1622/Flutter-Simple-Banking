@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:flutter/material.dart';
 
-//code for designing the UI of our text field where the user writes his email id or password
+//This code is for the login in page.
 
 const kTextFieldDecoration = InputDecoration(
     hintText: 'Enter a value',

@@ -4,9 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 //import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
-
-//code for designing the UI of our text field where the user writes his email id or password
-
+//This code is for the sign up page. It links directly to the realtime database and saves the authentication for logging in later.
 const kTextFieldDecoration = InputDecoration(
   hintText: 'Enter a value',
   hintStyle: TextStyle(color: Colors.grey),
